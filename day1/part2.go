@@ -7,7 +7,7 @@ import (
 )
 
 func main() {
-    input := utils.Readfile("data/day1.txt")
+    input := utils.Readfile("day1/part1.txt")
     values := strings.Split(input, "\n")
     int_input := utils.MapArrayToInt(values)
     fmt.Println(int_input)

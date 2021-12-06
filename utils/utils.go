@@ -2,9 +2,20 @@ package utils
 
 import (
     "fmt"
+    "strings"
 	"io/ioutil"
     "strconv"
 )
+
+func FilterArray(arr []string, f func(string) bool) []string {
+    arr_c := make([]string, 0)
+    for _, v := range arr {
+        if f(v) {
+            arr_c = append(arr_c, v)
+        }
+    }
+    return arr_c
+}
 
 func check(e error) {
     if e != nil {
@@ -17,8 +28,11 @@ func Readfile(filePath string) string {
 	data, err := ioutil.ReadFile(filePath)
     check(err)
 	input := string(data)
-    // fmt.Println("Contents of file:", input)
     return input
+}
+
+func SplitArray(array string) []string {
+    return strings.Split(array, "\n")
 }
 
 func MapArrayToInt(array []string) []int64 {
