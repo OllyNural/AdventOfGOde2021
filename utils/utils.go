@@ -35,6 +35,14 @@ func SplitArray(array string) []string {
     return strings.Split(array, "\n")
 }
 
+func SplitArrayDelim(array string, delim string) []string {
+    return strings.Split(array, delim)
+}
+
+func RemoveSpaces(word string) []string {
+    return strings.Fields(word)
+}
+
 func MapArrayToInt(array []string) []int64 {
     var array2 []int64
     for _, val := range array {
@@ -42,4 +50,12 @@ func MapArrayToInt(array []string) []int64 {
         array2 = append(array2, intVal)
     }
     return array2
+}
+
+func Sum(array []int64) int64 {
+    result := int64(0)
+    for _, v := range array {
+        result += v
+    }
+    return result
 }
