@@ -10,7 +10,7 @@ import (
 func main() {
     input := utils.Readfile("day1/part1.txt")
     values := strings.Split(input, "\n")
-    int_input := utils.MapArrayToInt(values)
+    int_input := utils.MapArrayToInt64(values)
     count := 0
     for i := 1; i < len(int_input); i++ {
         curr, _ := strconv.ParseInt(int_input[i], 10, 64)

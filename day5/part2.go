@@ -33,8 +33,8 @@ func main() {
 	for i := 0; i < len(input_array); i++ {
 		line := utils.SplitArrayDelim(input_array[i], " -> ")
 		start, end := 
-			utils.MapArrayToInt(utils.SplitArrayDelim(line[0], ",")), 
-			utils.MapArrayToInt(utils.SplitArrayDelim(line[1], ","))
+			utils.MapArrayToInt64(utils.SplitArrayDelim(line[0], ",")), 
+			utils.MapArrayToInt64(utils.SplitArrayDelim(line[1], ","))
 
 		if isHorizontal(start, end) {
 			// Horizontal

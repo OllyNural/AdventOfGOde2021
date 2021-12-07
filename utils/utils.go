@@ -5,6 +5,7 @@ import (
     "strings"
 	"io/ioutil"
     "strconv"
+    "math/big"
 )
 
 func FilterArray(arr []string, f func(string) bool) []string {
@@ -43,11 +44,30 @@ func RemoveSpaces(word string) []string {
     return strings.Fields(word)
 }
 
-func MapArrayToInt(array []string) []int64 {
+func MapArrayToInt64(array []string) []int64 {
     var array2 []int64
     for _, val := range array {
         intVal, _ := strconv.ParseInt(val, 10, 64)
         array2 = append(array2, intVal)
+    }
+    return array2
+}
+
+func MapArrayToInt(array []string) []int {
+    var array2 []int
+    for _, val := range array {
+        intVal, _ := strconv.Atoi(val)
+        array2 = append(array2, intVal)
+    }
+    return array2
+}
+
+func MapArrayToIntBig(array []string) []*big.Int {
+    array2 := make([]*big.Int, 0)
+    for _, val := range array {
+        intVal, _ := strconv.ParseInt(val, 10, 64)
+        bigInt := big.NewInt(intVal)
+        array2 = append(array2, bigInt)
     }
     return array2
 }

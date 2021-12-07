@@ -64,7 +64,7 @@ func main() {
 	// fmt.Println(input_array)
 	input := utils.Readfile("day4/part1.txt")
 	input_array := utils.SplitArray(input)
-	numbers := utils.MapArrayToInt(utils.SplitArrayDelim(input_array[0], ","))
+	numbers := utils.MapArrayToInt64(utils.SplitArrayDelim(input_array[0], ","))
 	var bingo_cards [][][]cell
 
 	var temp_board [][]cell
